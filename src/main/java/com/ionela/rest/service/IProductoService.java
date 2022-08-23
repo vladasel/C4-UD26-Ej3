@@ -5,7 +5,7 @@ import java.util.List;
 import com.ionela.rest.dto.Producto;
 
 public interface IProductoService {
-	public List<Producto> listarProyectos();
+	public List<Producto> listarProductos();
 
 	public Producto guardarProducto(Producto producto);
 

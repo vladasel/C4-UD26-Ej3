@@ -9,7 +9,7 @@ public interface IVentaService {
 
 	public Venta guardarVenta(Venta venta);
 
-	public Venta ventaasignadoXID(Long id);
+	public Venta ventaXID(Long id);
 
 	public Venta actualizarVenta(Venta venta);
 

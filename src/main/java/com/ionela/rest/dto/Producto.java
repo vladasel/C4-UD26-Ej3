@@ -51,11 +51,11 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public int gePrecio() {
+	public int getPrecio() {
 		return precio;
 	}
 
-	public void setHoras(int precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 

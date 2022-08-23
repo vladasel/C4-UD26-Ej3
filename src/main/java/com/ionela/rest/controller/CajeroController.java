@@ -19,43 +19,43 @@ import com.ionela.rest.service.CajeroServiceImpl;
 @RequestMapping("/api")
 public class CajeroController {
 	@Autowired
-	CajeroServiceImpl cientificoServiceImpl;
+	CajeroServiceImpl cajeroServiceImpl;
 
-	@GetMapping("/cientificos")
-	public List<Cajero> listarCientificos() {
-		return cientificoServiceImpl.listarCientificos();
+	@GetMapping("/cajeros")
+	public List<Cajero> listarCajeros() {
+		return cajeroServiceImpl.listarCajeros();
 	}
 
-	@PostMapping("/cientificos")
-	public Cajero salvarCientifico(@RequestBody Cajero cientifico) {
+	@PostMapping("/cajeros")
+	public Cajero salvarCajero(@RequestBody Cajero cajero) {
 
-		return cientificoServiceImpl.guardarCientifico(cientifico);
+		return cajeroServiceImpl.guardarCajero(cajero);
 	}
 
-	@GetMapping("/cientificos/{id}")
-	public Cajero cientificoXID(@PathVariable(name = "id") String id) {
+	@GetMapping("/cajeros/{id}")
+	public Cajero cajeroXID(@PathVariable(name = "id") Long id) {
 
-		return cientificoServiceImpl.cientificoXID(id);
+		return cajeroServiceImpl.cajeroXID(id);
 	}
 
-	@PutMapping("/cientificos/{id}")
-	public Cajero actualizarCientifico(@PathVariable(name = "id") String id, @RequestBody Cajero cientifico) {
+	@PutMapping("/cajeros/{id}")
+	public Cajero actualizarCajero(@PathVariable(name = "id") Long id, @RequestBody Cajero cajero) {
 
 		Cajero seleccionado = new Cajero();
 		Cajero actualizado = new Cajero();
 
-		seleccionado = cientificoServiceImpl.cientificoXID(id);
+		seleccionado = cajeroServiceImpl.cajeroXID(id);
 
-		seleccionado.setNom_apell(cientifico.getNom_apell());
+		seleccionado.setNom_apell(cajero.getNom_apell());
 
-		actualizado = cientificoServiceImpl.actualizarCientifico(seleccionado);
+		actualizado = cajeroServiceImpl.actualizarCajero(seleccionado);
 
 		return actualizado;
 	}
 
-	@DeleteMapping("/cientificos/{id}")
+	@DeleteMapping("/cajeros/{id}")
 
-	public void eleiminarCientifico(@PathVariable(name = "id") String id) {
-		cientificoServiceImpl.eliminarCientifico(id);
+	public void eleiminarCientifico(@PathVariable(name = "id") Long id) {
+		cajeroServiceImpl.eliminarCajero(id);
 	}
 }

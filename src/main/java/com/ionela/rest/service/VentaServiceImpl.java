@@ -27,7 +27,7 @@ public class VentaServiceImpl implements IVentaService {
 	}
 
 	@Override
-	public Venta ventaasignadoXID(Long id) {
+	public Venta ventaXID(Long id) {
 		// TODO Auto-generated method stub
 		return iVentaDAO.findById(id).get();
 	}

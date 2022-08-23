@@ -19,44 +19,44 @@ import com.ionela.rest.service.ProductoServiceImpl;
 @RequestMapping("/api")
 public class ProductoController {
 	@Autowired
-	ProductoServiceImpl proyectoServiceImpl;
+	ProductoServiceImpl productoServiceImpl;
 
-	@GetMapping("/proyectos")
-	public List<Producto> listarProyectoos() {
-		return proyectoServiceImpl.listarProyectos();
+	@GetMapping("/productos")
+	public List<Producto> listarProductos() {
+		return productoServiceImpl.listarProductos();
 	}
 
-	@PostMapping("/proyectos")
-	public Producto salvarProyecto(@RequestBody Producto proyecto) {
+	@PostMapping("/productos")
+	public Producto salvarProducto(@RequestBody Producto producto) {
 
-		return proyectoServiceImpl.guardarProyecto(proyecto);
+		return productoServiceImpl.guardarProducto(producto);
 	}
 
-	@GetMapping("/proyectos/{id}")
-	public Producto proyectoXID(@PathVariable(name = "id") String id) {
+	@GetMapping("/productos/{id}")
+	public Producto productoXID(@PathVariable(name = "id") Long id) {
 
-		return proyectoServiceImpl.proyectoXID(id);
+		return productoServiceImpl.productoXID(id);
 	}
 
 	@PutMapping("/proyectos/{id}")
-	public Producto actualizarProyecto(@PathVariable(name = "id") String id, @RequestBody Producto proyecto) {
+	public Producto actualizarProyecto(@PathVariable(name = "id") Long id, @RequestBody Producto producto) {
 
 		Producto seleccionado = new Producto();
 		Producto actualizado = new Producto();
 
-		seleccionado = proyectoServiceImpl.proyectoXID(id);
+		seleccionado = productoServiceImpl.productoXID(id);
 
-		seleccionado.setNombre(proyecto.getNombre());
-		seleccionado.setHoras(proyecto.getHoras());
+		seleccionado.setNombre(producto.getNombre());
+		seleccionado.setPrecio(producto.getPrecio());
 
-		actualizado = proyectoServiceImpl.actualizarProyecto(seleccionado);
+		actualizado = productoServiceImpl.actualizarProducto(seleccionado);
 
 		return actualizado;
 	}
 
-	@DeleteMapping("/proyectos/{id}")
+	@DeleteMapping("/productos/{id}")
 
-	public void eleiminarProyecto(@PathVariable(name = "id") String id) {
-		proyectoServiceImpl.eliminarProyecto(id);
+	public void eleiminarProducto(@PathVariable(name = "id") Long id) {
+		productoServiceImpl.eliminarProducto(id);
 	}
 }

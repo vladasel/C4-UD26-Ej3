@@ -15,7 +15,7 @@ public class ProductoServiceImpl implements IProductoService {
 	IProductoDAO iProductoDAO;
 
 	@Override
-	public List<Producto> listarProyectos() {
+	public List<Producto> listarProductos() {
 		// TODO Auto-generated method stub
 		return iProductoDAO.findAll();
 	}
