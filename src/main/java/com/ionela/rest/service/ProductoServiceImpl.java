@@ -5,35 +5,35 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ionela.rest.dao.IProyectoDAO;
-import com.ionela.rest.dto.Proyecto;
+import com.ionela.rest.dao.IProductoDAO;
+import com.ionela.rest.dto.Producto;
 
 @Service
-public class ProyectoServiceImpl implements IProyectoService {
+public class ProductoServiceImpl implements IProductoService {
 
 	@Autowired
-	IProyectoDAO iProyectoDAO;
+	IProductoDAO iProyectoDAO;
 
 	@Override
-	public List<Proyecto> listarProyectos() {
+	public List<Producto> listarProyectos() {
 		// TODO Auto-generated method stub
 		return iProyectoDAO.findAll();
 	}
 
 	@Override
-	public Proyecto guardarProyecto(Proyecto proyecto) {
+	public Producto guardarProyecto(Producto proyecto) {
 		// TODO Auto-generated method stub
 		return iProyectoDAO.save(proyecto);
 	}
 
 	@Override
-	public Proyecto proyectoXID(String id) {
+	public Producto proyectoXID(String id) {
 		// TODO Auto-generated method stub
 		return iProyectoDAO.findById(id).get();
 	}
 
 	@Override
-	public Proyecto actualizarProyecto(Proyecto proyecto) {
+	public Producto actualizarProyecto(Producto proyecto) {
 		// TODO Auto-generated method stub
 		return iProyectoDAO.save(proyecto);
 	}

@@ -12,37 +12,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ionela.rest.dto.Proyecto;
-import com.ionela.rest.service.ProyectoServiceImpl;
+import com.ionela.rest.dto.Producto;
+import com.ionela.rest.service.ProductoServiceImpl;
 
 @RestController
 @RequestMapping("/api")
-public class ProyectoController {
+public class ProductoController {
 	@Autowired
-	ProyectoServiceImpl proyectoServiceImpl;
+	ProductoServiceImpl proyectoServiceImpl;
 
 	@GetMapping("/proyectos")
-	public List<Proyecto> listarProyectoos() {
+	public List<Producto> listarProyectoos() {
 		return proyectoServiceImpl.listarProyectos();
 	}
 
 	@PostMapping("/proyectos")
-	public Proyecto salvarProyecto(@RequestBody Proyecto proyecto) {
+	public Producto salvarProyecto(@RequestBody Producto proyecto) {
 
 		return proyectoServiceImpl.guardarProyecto(proyecto);
 	}
 
 	@GetMapping("/proyectos/{id}")
-	public Proyecto proyectoXID(@PathVariable(name = "id") String id) {
+	public Producto proyectoXID(@PathVariable(name = "id") String id) {
 
 		return proyectoServiceImpl.proyectoXID(id);
 	}
 
 	@PutMapping("/proyectos/{id}")
-	public Proyecto actualizarProyecto(@PathVariable(name = "id") String id, @RequestBody Proyecto proyecto) {
+	public Producto actualizarProyecto(@PathVariable(name = "id") String id, @RequestBody Producto proyecto) {
 
-		Proyecto seleccionado = new Proyecto();
-		Proyecto actualizado = new Proyecto();
+		Producto seleccionado = new Producto();
+		Producto actualizado = new Producto();
 
 		seleccionado = proyectoServiceImpl.proyectoXID(id);
 

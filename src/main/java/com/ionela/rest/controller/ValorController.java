@@ -12,37 +12,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ionela.rest.dto.AsignadoA;
-import com.ionela.rest.service.AsignadoAServiceImpl;
+import com.ionela.rest.dto.Venta;
+import com.ionela.rest.service.VentaServiceImpl;
 
 @RestController
 @RequestMapping("/api")
-public class AsignadoAController {
+public class ValorController {
 	@Autowired
-	AsignadoAServiceImpl asignadoServiceImpl;
+	VentaServiceImpl asignadoServiceImpl;
 
 	@GetMapping("/asignados")
-	public List<AsignadoA> listarAsignados() {
+	public List<Venta> listarAsignados() {
 		return asignadoServiceImpl.listarAsignados();
 	}
 
 	@PostMapping("/asignados")
-	public AsignadoA salvarAsignadoA(@RequestBody AsignadoA asignado) {
+	public Venta salvarAsignadoA(@RequestBody Venta asignado) {
 
 		return asignadoServiceImpl.guardarAsignadoA(asignado);
 	}
 
 	@GetMapping("/asignados/{id}")
-	public AsignadoA asignadoXID(@PathVariable(name = "id") Long id) {
+	public Venta asignadoXID(@PathVariable(name = "id") Long id) {
 
 		return asignadoServiceImpl.asignadoXID(id);
 	}
 
 	@PutMapping("/asignados/{id}")
-	public AsignadoA actualizarAsignadoA(@PathVariable(name = "id") Long id, @RequestBody AsignadoA asignado) {
+	public Venta actualizarAsignadoA(@PathVariable(name = "id") Long id, @RequestBody Venta asignado) {
 
-		AsignadoA seleccionado = new AsignadoA();
-		AsignadoA actualizado = new AsignadoA();
+		Venta seleccionado = new Venta();
+		Venta actualizado = new Venta();
 
 		seleccionado = asignadoServiceImpl.asignadoXID(id);
 

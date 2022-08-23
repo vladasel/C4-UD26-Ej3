@@ -12,37 +12,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ionela.rest.dto.Cientifico;
-import com.ionela.rest.service.CientificoServiceImpl;
+import com.ionela.rest.dto.Cajero;
+import com.ionela.rest.service.CajeroServiceImpl;
 
 @RestController
 @RequestMapping("/api")
-public class CientificoController {
+public class CajeroController {
 	@Autowired
-	CientificoServiceImpl cientificoServiceImpl;
+	CajeroServiceImpl cientificoServiceImpl;
 
 	@GetMapping("/cientificos")
-	public List<Cientifico> listarCientificos() {
+	public List<Cajero> listarCientificos() {
 		return cientificoServiceImpl.listarCientificos();
 	}
 
 	@PostMapping("/cientificos")
-	public Cientifico salvarCientifico(@RequestBody Cientifico cientifico) {
+	public Cajero salvarCientifico(@RequestBody Cajero cientifico) {
 
 		return cientificoServiceImpl.guardarCientifico(cientifico);
 	}
 
 	@GetMapping("/cientificos/{id}")
-	public Cientifico cientificoXID(@PathVariable(name = "id") String id) {
+	public Cajero cientificoXID(@PathVariable(name = "id") String id) {
 
 		return cientificoServiceImpl.cientificoXID(id);
 	}
 
 	@PutMapping("/cientificos/{id}")
-	public Cientifico actualizarCientifico(@PathVariable(name = "id") String id, @RequestBody Cientifico cientifico) {
+	public Cajero actualizarCientifico(@PathVariable(name = "id") String id, @RequestBody Cajero cientifico) {
 
-		Cientifico seleccionado = new Cientifico();
-		Cientifico actualizado = new Cientifico();
+		Cajero seleccionado = new Cajero();
+		Cajero actualizado = new Cajero();
 
 		seleccionado = cientificoServiceImpl.cientificoXID(id);
 

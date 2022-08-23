@@ -5,34 +5,34 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ionela.rest.dao.ICientificoDAO;
-import com.ionela.rest.dto.Cientifico;
+import com.ionela.rest.dao.ICajeroDAO;
+import com.ionela.rest.dto.Cajero;
 
 @Service
-public class CientificoServiceImpl implements ICientificoService {
+public class CajeroServiceImpl implements ICajeroService {
 
 	@Autowired
-	ICientificoDAO iCientificoDAO;
+	ICajeroDAO iCientificoDAO;
 
 	@Override
-	public List<Cientifico> listarCientificos() {
+	public List<Cajero> listarCientificos() {
 		return iCientificoDAO.findAll();
 	}
 
 	@Override
-	public Cientifico guardarCientifico(Cientifico cientifico) {
+	public Cajero guardarCientifico(Cajero cientifico) {
 		// TODO Auto-generated method stub
 		return iCientificoDAO.save(cientifico);
 	}
 
 	@Override
-	public Cientifico cientificoXID(String id) {
+	public Cajero cientificoXID(String id) {
 		// TODO Auto-generated method stub
 		return iCientificoDAO.findById(id).get();
 	}
 
 	@Override
-	public Cientifico actualizarCientifico(Cientifico cientifico) {
+	public Cajero actualizarCientifico(Cajero cientifico) {
 		// TODO Auto-generated method stub
 		return iCientificoDAO.save(cientifico);
 	}

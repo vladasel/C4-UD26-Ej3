@@ -5,32 +5,32 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ionela.rest.dao.IAsignadoADAO;
-import com.ionela.rest.dto.AsignadoA;
+import com.ionela.rest.dao.IVentaDAO;
+import com.ionela.rest.dto.Venta;
 
 @Service
-public class AsignadoAServiceImpl implements IAsignadoAService {
+public class VentaServiceImpl implements IVentaService {
 
 	@Autowired
-	IAsignadoADAO iAsignadoDAO;
+	IVentaDAO iAsignadoDAO;
 
 	@Override
-	public List<AsignadoA> listarAsignados() {
+	public List<Venta> listarAsignados() {
 		return iAsignadoDAO.findAll();
 	}
 
 	@Override
-	public AsignadoA guardarAsignadoA(AsignadoA asignado) {
+	public Venta guardarAsignadoA(Venta asignado) {
 		return iAsignadoDAO.save(asignado);
 	}
 
 	@Override
-	public AsignadoA asignadoXID(Long id) {
+	public Venta asignadoXID(Long id) {
 		return iAsignadoDAO.findById(id).get();
 	}
 
 	@Override
-	public AsignadoA actualizarAsignadoA(AsignadoA asignado) {
+	public Venta actualizarAsignadoA(Venta asignado) {
 		return iAsignadoDAO.save(asignado);
 	}
 
