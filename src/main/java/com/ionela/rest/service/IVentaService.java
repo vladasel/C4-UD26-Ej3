@@ -5,13 +5,13 @@ import java.util.List;
 import com.ionela.rest.dto.Venta;
 
 public interface IVentaService {
-	public List<Venta> listarAsignados();
+	public List<Venta> listarVenta();
 
-	public Venta guardarAsignadoA(Venta asignado);
+	public Venta guardarVenta(Venta venta);
 
-	public Venta asignadoXID(Long id);
+	public Venta ventaasignadoXID(Long id);
 
-	public Venta actualizarAsignadoA(Venta asignado);
+	public Venta actualizarVenta(Venta venta);
 
-	public void eliminarAsignadoA(Long id);
+	public void eliminarVenta(Long id);
 }

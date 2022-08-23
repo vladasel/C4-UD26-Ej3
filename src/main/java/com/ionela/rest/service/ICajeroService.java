@@ -5,13 +5,13 @@ import java.util.List;
 import com.ionela.rest.dto.Cajero;
 
 public interface ICajeroService {
-	public List<Cajero> listarCientificos();
+	public List<Cajero> listarCajeros();
 
-	public Cajero guardarCientifico(Cajero cientifico);
+	public Cajero guardarCajero(Cajero cajero);
 
-	public Cajero cientificoXID(String id);
+	public Cajero cajeroXID(Long id);
 
-	public Cajero actualizarCientifico(Cajero cientifico);
+	public Cajero actualizarCajero(Cajero cajero);
 
-	public void eliminarCientifico(String id);
+	public void eliminarCajero(Long id);
 }

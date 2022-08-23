@@ -12,34 +12,35 @@ import com.ionela.rest.dto.Cajero;
 public class CajeroServiceImpl implements ICajeroService {
 
 	@Autowired
-	ICajeroDAO iCientificoDAO;
+	ICajeroDAO iCajeroDAO;
 
 	@Override
-	public List<Cajero> listarCientificos() {
-		return iCientificoDAO.findAll();
-	}
-
-	@Override
-	public Cajero guardarCientifico(Cajero cientifico) {
+	public List<Cajero> listarCajeros() {
 		// TODO Auto-generated method stub
-		return iCientificoDAO.save(cientifico);
+		return iCajeroDAO.findAll();
 	}
 
 	@Override
-	public Cajero cientificoXID(String id) {
+	public Cajero guardarCajero(Cajero cajero) {
 		// TODO Auto-generated method stub
-		return iCientificoDAO.findById(id).get();
+		return iCajeroDAO.save(cajero);
 	}
 
 	@Override
-	public Cajero actualizarCientifico(Cajero cientifico) {
+	public Cajero cajeroXID(Long id) {
 		// TODO Auto-generated method stub
-		return iCientificoDAO.save(cientifico);
+		return iCajeroDAO.findById(id).get();
 	}
 
 	@Override
-	public void eliminarCientifico(String id) {
-		iCientificoDAO.deleteById(id);
+	public Cajero actualizarCajero(Cajero cajero) {
+		// TODO Auto-generated method stub
+		return iCajeroDAO.save(cajero);
+	}
+
+	@Override
+	public void eliminarCajero(Long id) {
+		iCajeroDAO.deleteById(id);
 	}
 
 }

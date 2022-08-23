@@ -7,11 +7,11 @@ import com.ionela.rest.dto.Producto;
 public interface IProductoService {
 	public List<Producto> listarProyectos();
 
-	public Producto guardarProyecto(Producto proyecto);
+	public Producto guardarProducto(Producto producto);
 
-	public Producto proyectoXID(String id);
+	public Producto productoXID(Long id);
 
-	public Producto actualizarProyecto(Producto proyecto);
+	public Producto actualizarProducto(Producto producto);
 
-	public void eliminarProyecto(String id);
+	public void eliminarProducto(Long id);
 }

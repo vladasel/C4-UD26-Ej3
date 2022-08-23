@@ -12,31 +12,36 @@ import com.ionela.rest.dto.Venta;
 public class VentaServiceImpl implements IVentaService {
 
 	@Autowired
-	IVentaDAO iAsignadoDAO;
+	IVentaDAO iVentaDAO;
 
 	@Override
-	public List<Venta> listarAsignados() {
-		return iAsignadoDAO.findAll();
+	public List<Venta> listarVenta() {
+		// TODO Auto-generated method stub
+		return iVentaDAO.findAll();
 	}
 
 	@Override
-	public Venta guardarAsignadoA(Venta asignado) {
-		return iAsignadoDAO.save(asignado);
+	public Venta guardarVenta(Venta venta) {
+		// TODO Auto-generated method stub
+		return iVentaDAO.save(venta);
 	}
 
 	@Override
-	public Venta asignadoXID(Long id) {
-		return iAsignadoDAO.findById(id).get();
+	public Venta ventaasignadoXID(Long id) {
+		// TODO Auto-generated method stub
+		return iVentaDAO.findById(id).get();
 	}
 
 	@Override
-	public Venta actualizarAsignadoA(Venta asignado) {
-		return iAsignadoDAO.save(asignado);
+	public Venta actualizarVenta(Venta venta) {
+		// TODO Auto-generated method stub
+		return iVentaDAO.save(venta);
 	}
 
 	@Override
-	public void eliminarAsignadoA(Long id) {
-		iAsignadoDAO.deleteById(id);
+	public void eliminarVenta(Long id) {
+		iVentaDAO.deleteById(id);		
 	}
 
+	
 }

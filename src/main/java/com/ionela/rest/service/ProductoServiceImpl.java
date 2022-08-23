@@ -12,35 +12,35 @@ import com.ionela.rest.dto.Producto;
 public class ProductoServiceImpl implements IProductoService {
 
 	@Autowired
-	IProductoDAO iProyectoDAO;
+	IProductoDAO iProductoDAO;
 
 	@Override
 	public List<Producto> listarProyectos() {
 		// TODO Auto-generated method stub
-		return iProyectoDAO.findAll();
+		return iProductoDAO.findAll();
 	}
 
 	@Override
-	public Producto guardarProyecto(Producto proyecto) {
+	public Producto guardarProducto(Producto producto) {
 		// TODO Auto-generated method stub
-		return iProyectoDAO.save(proyecto);
+		return iProductoDAO.save(producto);
 	}
 
 	@Override
-	public Producto proyectoXID(String id) {
+	public Producto productoXID(Long id) {
 		// TODO Auto-generated method stub
-		return iProyectoDAO.findById(id).get();
+		return iProductoDAO.findById(id).get();
 	}
 
 	@Override
-	public Producto actualizarProyecto(Producto proyecto) {
+	public Producto actualizarProducto(Producto producto) {
 		// TODO Auto-generated method stub
-		return iProyectoDAO.save(proyecto);
+		return iProductoDAO.save(producto);
 	}
 
 	@Override
-	public void eliminarProyecto(String id) {
-		iProyectoDAO.deleteById(id);
+	public void eliminarProducto(Long id) {
+		iProductoDAO.deleteById(id);
 	}
 
 }
